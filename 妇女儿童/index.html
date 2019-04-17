@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>妇女儿童首页</title>
+    <link rel="stylesheet" type="text/css" href="kid.css">
+</head>
+
+<body>
+    <div class="box">
+        <!-- 内容头部文字 -->
+        <img src="img/k1.png" alt="标题">
+    </div>
+
+    <!-- 七巧板 -->
+    <div class="box1">
+        <!-- 测导 -->
+        <div class="boxks" id="box1">
+            <div class="boxks1">
+                <a href="#"><img src="img/ks1.png" alt="测1"><span>兴趣报名小组</span></a>
+            </div>
+            <div class="boxks2">
+                <a href="#"><img src="img/ks2.png" alt="测2"><span>兴趣报名小组</span></a>
+            </div>
+            <div class="boxks3">
+                <a href="#"><img src="img/ks3.png" alt="测2"><span>兴趣报名小组</span></a>
+            </div>
+            <div class="boxke" id="erwei">
+                <img src="img/k22.jpg" alt="">
+            </div>
+        </div>
+        <img src="img/k2.png" alt="七巧板">
+        <div class="box-size1">
+            <a target="_self" href="happiness.html"> <img src="img/k4.png" alt="学院幸福"></a>
+
+        </div>
+        <div class="box-size2">
+            <a target="_self" href="headlines.html"> <img src="img/k5.png" alt="中心头条"></a>
+            <div class="boxk">
+                <a class="a" href="#"> 2017教育部关于2013年深化教育领域综合改革的意…      </a>
+                <a class="a1" href="#">  2017教育部2013年工作要点……           </a>
+                <span class="span">[2018-12-09]</span>
+                <span class="span1">[2018-11-09]</span>
+            </div>
+        </div>
+        <div class="box-size3">
+            <a target="_self" href="girl.html"> <img src="img/k6.png" alt="女性风采"></a>
+
+        </div>
+        <div class="box-size4">
+            <a target="_self" href="interest.html"> <img src="img/k7.png" alt="兴趣小组"></a>
+
+        </div>
+        <div class="box-size5">
+            <a target="_self" href="benefit.html"> <img src="img/k8.png" alt="公益活动"></a>
+
+        </div>
+        <div class="box-size6">
+            <a target="_self" href="school.html"> <img src="img/k9.png" alt="幼儿艺校"></a>
+
+        </div>
+        <div class="box-size7">
+            <a target="_self" href="center.html"><img src="img/k10.png" alt="中心概况"></a>
+
+        </div>
+    </div>
+    <!-- 底部 -->
+    <div class="box3">
+        <p>友情链接：河南妇联网女性之声</p><br>
+        <span>河南省妇女儿童活动中心 版权所有 网络</span>
+    </div>
+</body>
+<script type="text/javascript">
+    var qr = document.getElementById('erwei');
+    var box1 = document.getElementById('box1').getElementsByTagName('div');
+    console.log(box1)
+    for (var i = 0; i < box1.length - 1; i++) {
+        box1[i].onmouseenter = function() {
+            this.style.right = '-145px';
+            qr.style.display = 'block';
+        }
+        box1[i].onmouseleave = function() {
+            this.style.right = '-125px';
+            qr.style.display = 'none';
+        }
+        console.log(i);
+    }
+</script>
+
+</html>

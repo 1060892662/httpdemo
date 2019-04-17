@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>兴趣小组</title>
+    <link rel="stylesheet" type="text/css" href="center.css">
+</head>
+
+<body>
+    <!-- 顶部 -->
+    <div class="box-c">
+        <div class="boxc">
+            <p>欢迎来到河南妇女儿童中心</p>
+            <div class="boxca">
+                <a href="#">收藏本站</a>
+                <a href="#">在线留言</a>
+                <a href="#">联系我们</a>
+            </div>
+        </div>
+        <!-- logo -->
+
+        <div class="boxc1">
+            <div class="boxc2">
+                <div class="boxcm1">
+                    <img src="img/c1.jpg" alt="">
+                    <ul>
+                        <li><a target="_self" href="index.html">首页</a></li>
+                        <li><a target="_self" href="center.html">中心概况</a></li>
+                        <li><a target="_self" href="headlines.html">中心头条</a></li>
+                        <li><a target="_self" style="color:#eca438;" href="#">兴趣小组</a></li>
+                        <li class="li1"><a href="happiness.html">幸福学院</a></li>
+                        <li><a target="_self" href="school.html">幼儿学校</a></li>
+                        <li><a target="_self" href="benefit.html">公益活动</a></li>
+                        <li><a target="_self" href="girl.html">女性风采</a></li>
+
+
+                    </ul>
+                </div>
+                <div class="boxcm2">
+                    <img src="img/c2.jpg" alt="logo">
+                </div>
+                <div class="boxcm3">
+                    <div class="boxcm4">
+                        <input type="text" placeholder="手机号">
+                        <input type="text" placeholder="密码">
+                        <img src="img/c3.png" alt="箭头"></div>
+                    <a href="#">登陆</a>
+                </div>
+
+
+            </div>
+
+
+        </div>
+        <!-- 轮播图 -->
+        <div class="boxcl" id="chart">
+            <img class="boximg" src="img/g1.png" alt="轮播图">
+            <img src="img/b1.jpg" alt="">
+            <img src="img/cl1.png" alt="">
+            <img src="img/H.jpg" alt="轮播图">
+            <ul id="uclick">
+                <li class="cont"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <div class="boxcl2"><img src="img/i2.png" alt="三角"></div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        var chart = document.getElementById('chart').children;
+        var index = 0;
+        var s = setInterval(move, 1000);
+        //找到所有的li
+        var ucl = document.getElementById('uclick').getElementsByTagName('li');
+        //通过li来控制轮播
+
+        for (var j = 0; j < ucl.length; j++) {
+            //为每一个li先加一个属性（0123）
+            ucl[j]._index = j;
+            console.log(ucl[j]);
+            //用一个函数把li的点击事件实现
+            ucl[j].onclick = function() {
+                //把前一个置为空
+                ucl[index].className = '';
+                //图片也变成空
+                chart[index].className = '';
+                //被点击的置为选中
+                ucl[this._index].className = 'cont';
+                chart[this._index].className = 'boximg';
+                //修改显示的索引然后返回上一步
+                index = this._index;
+            }
+        }
+        // 鼠标经过 停止轮播
+        var o = document.getElementById('chart');
+        o.onmouseenter = function() {
+            clearInterval(s);
+        }
+        o.onmouseleave = function() {
+                s = setInterval(move, 1000);
+            }
+            // 显示下一张图片的函数
+        function move() {
+            //当前置为隐藏；
+            chart[index].className = '';
+            ucl[index].className = '';
+            index++;
+            if (index == chart.length - 2) {
+                index = 0;
+            }
+            chart[index].className = 'boximg';
+            ucl[index].className = 'cont';
+        }
+    </script>
+
+    <!-- 内容区 -->
+
+    <div class="boxi-2">
+        <div class="boxc-4">
+            <div class="boxc-5">
+                <img src="img/cl3.png" alt="图">
+                <span>></span>
+                <a href="#">首页></a>
+                <a href="#">兴趣小组></a>
+            </div>
+        </div>
+        <div class="boxi1">
+            <ul>
+                <li class="li1">兴趣小组</li>
+                <li> <a target="_self" href="#">网上报名</a><i><img src="img/cl4.png" alt=""></i></li>
+                <li> <a target="_self" href="#">报名信息</a><i><img src="img/cl4.png" alt=""></i> </li>
+                <li> <a target="_self" href="#">小组简介</a><i><img src="img/cl4.png" alt=""></i> </li>
+                <li> <a target="_self" href="#">才艺展示</a><i><img src="img/cl4.png" alt=""></i> </li>
+                <li> <a target="_self" href="#">往来交流</a><i><img src="img/cl4.png" alt=""></i> </li>
+                <li> <a target="_self" href="#">教育科研</a><i><img src="img/cl4.png" alt=""></i> </li>
+                <li> <a target="_self" href="#">校外联盟</a><i><img src="img/cl4.png" alt=""></i> </li>
+                <li> <a target="_self" href="#">视频媒体</a><i><img src="img/cl4.png" alt=""></i> </li>
+                <li> <a target="_self" href="#">招聘信息</a><i><img src="img/cl4.png" alt=""></i> </li>
+
+
+            </ul>
+        </div>
+        <div class="boxi2">
+            <ul>
+                <li>
+                    <a href="">
+                        <img src="img/i3.png" alt="">
+                        <p>招生信息</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="img/i4.png" alt="">
+                        <p>小组简介</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="img/i5.png" alt="">
+                        <p>团队风采</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="img/i6.png" alt="">
+                        <p>社团活动</p>
+                    </a>
+                </li>
+
+                <li class="lli">
+                    <a href="">
+                        <img src="img/i7.png" alt="" style="width:570px;height: 290px;">
+                        <p>才艺展示</p>
+                    </a>
+                </li>
+                <li class="lli">
+                    <a href="">
+                        <img src="img/i8.png" alt="">
+                        <p>才艺展示</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img src="img/i9.png" alt="">
+                        <p>社团活动</p>
+                    </a>
+                </li>
+
+
+            </ul>
+        </div>
+
+
+
+
+    </div>
+    <!-- 底部 -->
+    <div class="boxi3">
+        <div class="boxi4">
+            <a href="index.html">网站首页|</a>
+            <a href="center.html">中心概况|</a>
+            <a href="headlines.html">中心头条|</a>
+            <a href="interest.html">兴趣培养|</a>
+            <a href="school.html">幼儿学校|</a>
+            <a href="benefit.html">科普活动|</a>
+            <a href="girl.html">女性风采</a>
+        </div>
+        <div class="boxi5">
+            <span>河南省妇女儿童活动中心  版权所有  网络 </span>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>幸福学院</title>
+    <link rel="stylesheet" type="text/css" href="center.css">
+</head>
+
+<body>
+    <!-- 顶部 -->
+    <div class="box-c">
+        <div class="boxc">
+            <p>欢迎来到河南妇女儿童中心</p>
+            <div class="boxca">
+                <a href="#">收藏本站</a>
+                <a href="#">在线留言</a>
+                <a href="#">联系我们</a>
+            </div>
+        </div>
+        <!-- logo -->
+
+        <div class="boxc1">
+            <div class="boxc2">
+                <div class="boxcm1">
+                    <img src="img/c1.jpg" alt="">
+                    <ul>
+                        <li><a target="_self" href="index.html">首页</a></li>
+                        <li><a target="_self" href="center.html">中心概况</a></li>
+                        <li><a target="_self" href="headlines.html">中心头条</a></li>
+                        <li><a target="_self" href="interest.html">兴趣小组</a></li>
+                        <li class="li1"><a target="_self" href="#" style="color:#f1612d;">幸福学院</a></li>
+                        <li><a target="_self" href="school.html">幼儿学校</a></li>
+
+                        <li><a target="_self" href="benefit.html">公益活动</a></li>
+                        <li><a target="_self" href="girl.html">女性风采</a></li>
+
+
+                    </ul>
+                </div>
+                <div class="boxcm2">
+                    <img src="img/c2.jpg" alt="logo">
+                </div>
+                <div class="boxcm3">
+                    <div class="boxcm4">
+                        <input type="text" placeholder="手机号">
+                        <input type="text" placeholder="密码">
+                        <img src="img/c3.png" alt="箭头"></div>
+                    <a href="#">登陆</a>
+                </div>
+
+            </div>
+
+
+        </div>
+        <!-- 轮播图 -->
+        <div class="boxcl" id="chart">
+            <img class="boximg" src="img/g1.png" alt="轮播图">
+            <img src="img/b1.jpg" alt="">
+            <img src="img/cl1.png" alt="">
+            <img src="img/H.jpg" alt="轮播图">
+            <ul id="uclick">
+                <li class="cont"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <div class="boxcl2"><img src="img/hpp.png" alt="三角"></div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        var chart = document.getElementById('chart').children;
+        var index = 0;
+        var s = setInterval(move, 1000);
+        //找到所有的li
+        var ucl = document.getElementById('uclick').getElementsByTagName('li');
+        //通过li来控制轮播
+
+        for (var j = 0; j < ucl.length; j++) {
+            //为每一个li先加一个属性（0123）
+            ucl[j]._index = j;
+            console.log(ucl[j]);
+            //用一个函数把li的点击事件实现
+            ucl[j].onclick = function() {
+                //把前一个置为空
+                ucl[index].className = '';
+                //图片也变成空
+                chart[index].className = '';
+                //被点击的置为选中
+                ucl[this._index].className = 'cont';
+                chart[this._index].className = 'boximg';
+                //修改显示的索引然后返回上一步
+                index = this._index;
+            }
+        }
+        // 鼠标经过 停止轮播
+        var o = document.getElementById('chart');
+        o.onmouseenter = function() {
+            clearInterval(s);
+        }
+        o.onmouseleave = function() {
+                s = setInterval(move, 1000);
+            }
+            // 显示下一张图片的函数
+        function move() {
+            //当前置为隐藏；
+            chart[index].className = '';
+            ucl[index].className = '';
+            index++;
+            if (index == chart.length - 2) {
+                index = 0;
+            }
+            chart[index].className = 'boximg';
+            ucl[index].className = 'cont';
+        }
+    </script>
+
+    <!-- 内容区 -->
+
+    <div class="boxhapp-2">
+        <div class="boxc-4">
+            <div class="boxc-5">
+                <img src="img/cl3.png" alt="图">
+                <span>></span>
+                <a href="#">首页></a>
+                <a href="#">公益活动></a>
+            </div>
+        </div>
+        <div class="boxhapp1">
+            <ul id="ull">
+                <li class="lih">幸福学院</li>
+                <li> <a href="#">家庭教育指导中心</a><i><img src="img/cl4.png" alt=""></i></li>
+                <li> <a href="#">好父母大讲堂</a><i><img src="img/cl4.png" alt=""></i> </li>
+                <li> <a href="#">教子有方</a><i><img src="img/cl4.png" alt=""></i> </li>
+                <li> <a href="#">智慧父母</a><i><img src="img/cl4.png" alt=""></i> </li>
+                <li> <a href="#">读书会</a><i><img src="img/cl4.png" alt=""></i> </li>
+                <li> <a href="#">成长俱乐部</a><i><img src="img/cl4.png" alt=""></i> </li>
+
+            </ul>
+        </div>
+        <script type="text/javascript">
+            var ull = document.getElementById('ull').children;
+            console.log(ull)
+
+            for (var i = 1; i < ull.length; i++) {
+                ull[i].onmouseenter = function() {
+                    console.log(i);
+                    this.style.backgroundColor = '#f1612d';
+                }
+            }
+
+            for (var i = 1; i < ull.length; i++) {
+                ull[i].onmouseleave = function() {
+                    console.log(i);
+                    this.style.backgroundColor = '#b0b0b0';
+                }
+            }
+        </script>
+        <div class="boxhapp2">
+            <div class="boxhapp3">
+                <a href="#"><img src="img/happ2(1).jpg" alt="图"></a>
+
+            </div>
+            <div class="boxhapp4">
+                <h5><img src="img/h3.png" alt="小标记">巧手育新苗，多肉传真情——中心开展迎“三八”亲子D</h5>
+                <p>发布：2017年3月25日</p>
+                <span>春回大地，万物复苏。为了迎接“三八”国际妇女节，丰富广大妇女家长的业余生活，倡导绿色种植的理念，引导健康文明有意义的家庭生活， 2月25日下午，苏州市妇女儿童活动中心特组织开展了……</span>
+            </div>
+        </div>
+        <div class="boxhapp2">
+            <div class="boxhapp3">
+                <a href="#"><img src="img/happ3.png" alt="图"></a>
+
+            </div>
+            <div class="boxhapp4">
+                <h5><img src="img/h3.png" alt="小标记">第八期《智慧父母》家长公益研修班报名中</h5>
+                <p>发布：2017年3月25日</p>
+                <span>做 ☘ 智 ☘ 慧 ☘ 父 ☘ 母 家庭是人生的第一所学校，家长是孩子的第一任老师，要给孩子讲好人生第一课，帮助扣好人生第一粒扣子。 习近平 河南省妇女... 2月25日下午，苏州市妇女儿童活动中心特组织开展了……</span>
+            </div>
+        </div>
+        <div class="boxhapp2">
+            <div class="boxhapp3">
+                <a href="#"><img src="img/happ4.png" alt="图"></a>
+
+            </div>
+            <div class="boxhapp4">
+                <h5><img src="img/h3.png" alt="小标记">第十期《智慧父母》家长公益研修班报名中</h5>
+                <p>发布：2017年3月25日</p>
+                <span>爱孩子是父母的本能， 如何爱，却是一种智慧。 如果说孩子是一棵树，， 可见孩子的成长， 除了离不开老师的教导， 更离不开父母的引领。 每一个孩子... 2月25日下午，苏州市妇女儿童活动中心特组织开展了……</span>
+            </div>
+        </div>
+        <div class="boxhapp2">
+            <div class="boxhapp3">
+                <a href="#"><img src="img/happ5.png" alt="图"></a>
+
+            </div>
+            <div class="boxhapp4">
+                <h5><img src="img/h3.png" alt="小标记">第八期《智慧父母》家长公益研修班报名中</h5>
+                <p>发布：2017年3月25日</p>
+                <span>爱孩子是父母的本能， 如何爱，却是一种智慧。 如果说孩子是一棵树，  更离不开父母的引领。 每一个孩子... 2月25日下午，苏州市妇女儿童活动中心特组织开展了……</span>
+            </div>
+        </div>
+        <div class="boxhapp2">
+            <div class="boxhapp3">
+                <a href="#"><img src="img/happ1.png" alt="图"></a>
+
+            </div>
+            <div class="boxhapp4">
+                <h5><img src="img/h3.png" alt="小标记">河南省家庭教育学会在郑州举办</h5>
+                <p>发布：2017年3月25日</p>
+                <span>河南省家庭教育学会在郑州举办 会议金句 坚持立德树人， 帮助孩子扣好人生第一粒扣子。我们应尊重天性， 你今天的态度就是明天的生活。 关系是... 2月25日下午，苏州市妇女儿童活动中心特组织开展了……</span>
+            </div>
+        </div>
+        <div class="boxhapp5">
+            <div class="boxhapp6">
+                <a href="#">首页</a>
+                <a href="#">1</a>
+                <a href="#">2</a>
+                <a href="#">3</a>
+                <a href="#">4</a>
+                <a href="#">末页</a>
+                <a href="#">共四页</a>
+            </div>
+        </div>
+
+
+
+
+
+    </div>
+    <!-- 底部 -->
+    <div class="boxhapp7">
+        <div class="boxi4">
+            <a href="index.html">网站首页|</a>
+            <a href="center.html">中心概况|</a>
+            <a href="headlines.html">中心头条|</a>
+            <a href="interest.html">兴趣培养|</a>
+            <a href="school.html">幼儿学校|</a>
+            <a href="benefit.html">科普活动|</a>
+            <a href="girl.html">女性风采</a>
+        </div>
+        <div class="boxi5">
+            <span>河南省妇女儿童活动中心  版权所有  网络 </span>
+        </div>
+    </div>
+</body>
+
+</html>

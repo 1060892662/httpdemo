@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>幼儿艺校</title>
+    <link rel="stylesheet" type="text/css" href="center.css">
+</head>
+
+<body>
+    <!-- 顶部 -->
+    <div class="box-c">
+        <div class="boxc">
+            <p>欢迎来到河南妇女儿童中心</p>
+            <div class="boxca">
+                <a href="#">收藏本站</a>
+                <a href="#">在线留言</a>
+                <a href="#">联系我们</a>
+            </div>
+        </div>
+        <!-- logo -->
+
+        <div class="boxc1">
+            <div class="boxc2">
+                <div class="boxcm1">
+                    <img src="img/c1.jpg" alt="">
+                    <ul>
+                        <li><a target="_self" href="index.html">首页</a></li>
+                        <li><a target="_self" href="center.html">中心概况</a></li>
+                        <li><a target="_self" href="headlines.html">中心头条</a></li>
+                        <li><a target="_self" href="interest.html">兴趣小组</a></li>
+                        <li class="li1"><a target="_self" href="happiness.html">幸福学院</a></li>
+                        <li><a target="_self" href="#" style="color:#0ecbb3;">幼儿学校</a></li>
+
+                        <li><a target="_self" href="benefit.html">公益活动</a></li>
+                        <li><a target="_self" href="girl.html">女性风采</a></li>
+
+
+                    </ul>
+                </div>
+                <div class="boxcm2">
+                    <img src="img/c2.jpg" alt="logo">
+                </div>
+                <div class="boxcm3">
+                    <div class="boxcm4">
+                        <input type="text" placeholder="手机号">
+                        <input type="text" placeholder="密码">
+                        <img src="img/c3.png" alt="箭头"></div>
+                    <a href="#">登陆</a>
+                </div>
+
+            </div>
+
+
+        </div>
+        <!-- 轮播图 -->
+        <div class="boxcl" id="chart">
+            <img class="boximg" src="img/g1.png" alt="轮播图">
+            <img src="img/b1.jpg" alt="">
+            <img src="img/cl1.png" alt="">
+            <img src="img/H.jpg" alt="轮播图">
+            <ul id="uclick">
+                <li class="cont"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <div class="boxcl2"><img src="img/s.png" alt="三角"></div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        var chart = document.getElementById('chart').children;
+        var index = 0;
+        var s = setInterval(move, 1000);
+        //找到所有的li
+        var ucl = document.getElementById('uclick').getElementsByTagName('li');
+        //通过li来控制轮播
+
+        for (var j = 0; j < ucl.length; j++) {
+            //为每一个li先加一个属性（0123）
+            ucl[j]._index = j;
+            console.log(ucl[j]);
+            //用一个函数把li的点击事件实现
+            ucl[j].onclick = function() {
+                //把前一个置为空
+                ucl[index].className = '';
+                //图片也变成空
+                chart[index].className = '';
+                //被点击的置为选中
+                ucl[this._index].className = 'cont';
+                chart[this._index].className = 'boximg';
+                //修改显示的索引然后返回上一步
+                index = this._index;
+            }
+        }
+        // 鼠标经过 停止轮播
+        var o = document.getElementById('chart');
+        o.onmouseenter = function() {
+            clearInterval(s);
+        }
+        o.onmouseleave = function() {
+                s = setInterval(move, 1000);
+            }
+            // 显示下一张图片的函数
+        function move() {
+            //当前置为隐藏；
+            chart[index].className = '';
+            ucl[index].className = '';
+            index++;
+            if (index == chart.length - 2) {
+                index = 0;
+            }
+            chart[index].className = 'boximg';
+            ucl[index].className = 'cont';
+        }
+    </script>
+
+    <!-- 内容区 -->
+
+    <div class="boxs-2">
+        <div class="boxc-4">
+            <div class="boxc-5">
+                <img src="img/cl3.png" alt="图">
+                <span>></span>
+                <a href="#">首页></a>
+                <a href="#">幼儿学校></a>
+            </div>
+        </div>
+        <div class="boxhapp1">
+            <ul id="ull">
+                <li class="lih" style="background:#0ecbb3;">幼儿学校</li>
+                <li> <a href="#">艺校简介</a><i><img src="img/cl4.png" alt=""></i></li>
+                <li> <a href="#">招生信息</a><i><img src="img/cl4.png" alt=""></i> </li>
+                <li> <a href="#">园丁风采</a><i><img src="img/cl4.png" alt=""></i> </li>
+                <li> <a href="#">萌娃乐园</a><i><img src="img/cl4.png" alt=""></i> </li>
+                <li> <a href="#">健康饮食</a><i><img src="img/cl4.png" alt=""></i> </li>
+                <li> <a href="#">育儿园地</a><i><img src="img/cl4.png" alt=""></i> </li>
+
+            </ul>
+        </div>
+        <script type="text/javascript">
+            var ull = document.getElementById('ull').children;
+            console.log(ull)
+
+            for (var i = 1; i < ull.length; i++) {
+                ull[i].onmouseenter = function() {
+                    console.log(i);
+                    this.style.backgroundColor = '#0ecbb3';
+                }
+            }
+
+            for (var i = 1; i < ull.length; i++) {
+                ull[i].onmouseleave = function() {
+                    console.log(i);
+                    this.style.backgroundColor = '#b0b0b0';
+                }
+            }
+        </script>
+        <div class="boxs1">
+            <div class="boxs2">
+                <span>艺校简介</span>
+                <p> 河南省幼儿艺术学校，座落在环境优美、绿树环绕的省妇女儿童活动中心院内，是活动中心所属的一所幼儿实验教学园地。 现有其它幼儿园所不具备的特有优势——逾万平米的大型户外活动场地。同时配备现代化的多功能食堂，能为幼儿每天提供均衡的营养膳食。
+                </p>
+                <p> 我园坚持“一切为了孩子，为了孩子的一切”的办园宗旨。全体教师勤奋敬业，严谨教学，因材施教，并不断改革创新，教学与科研相结合。 全面提高保教工作质量。除完成国家《幼儿园教育指导纲要》规定的课程外，还根据孩子的兴趣爱好，并充分利用活动中心一流师资、专业培训、 现代化设施的优势资源，突出美术、舞蹈、语言等艺术专业课，激发幼儿的创造力和独立思维能力，提高幼儿艺术修养，寓教于乐，融情操教育于其中， 使幼儿形成乐观自信、积极向上的健康人格，促进孩子德智体美的和谐发展……
+
+                    <a href="#">查看更多</a></p>
+            </div>
+            <div class="boxs3">
+                <img src="img/s1.png" alt="">
+            </div>
+        </div>
+
+        <div class="boxs4">
+            <ul>
+                <li>
+                    <a href=""><img src="img/s2.png" alt=""> <br> <span>招生信息></span></a>
+
+                </li>
+                <li>
+                    <a href=""><img src="img/s3.png" alt=""> <br> <span>招生信息></span></a>
+
+                </li>
+                <li style="margin-right:0px;">
+                    <a href=""><img src="img/s4.png" alt=""> <br> <span>招生信息></span></a>
+
+                </li>
+                <li>
+                    <a href=""><img src="img/s7.png" alt=""> <br> <span>招生信息></span></a>
+
+                </li>
+                <li style="margin-right:0px;">
+                    <a href=""><img src="img/s6.png" alt=""> <br> <span>招生信息></span></a>
+
+                </li>
+            </ul>
+        </div>
+
+
+
+
+
+    </div>
+    <!-- 底部 -->
+    <div class="boxs7">
+        <div class="boxi4">
+            <a href="index.html">网站首页|</a>
+            <a href="center.html">中心概况|</a>
+            <a href="headlines.html">中心头条|</a>
+            <a href="interest.html">兴趣培养|</a>
+            <a href="school.html">幼儿学校|</a>
+            <a href="benefit.html">科普活动|</a>
+            <a href="girl.html">女性风采</a>
+        </div>
+        <div class="boxi5">
+            <span>河南省妇女儿童活动中心  版权所有  网络 </span>
+        </div>
+    </div>
+</body>
+
+</html>
